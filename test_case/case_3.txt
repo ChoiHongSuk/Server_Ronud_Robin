@@ -1,0 +1,15 @@
+POST /shell_code_test.php?a=1&b=2 HTTP/1.1
+Accept: text/html, application/xhtml+xml, */*
+Accept-Language: ko-KR
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
+Accept-Encoding: gzip, deflate
+Host: 192.168.216.172
+Content-Type: application/x-www-form-urlencoded
+Connection: Keep-Alive
+Cookie: PHPSESSID=94bfce35f09c09a43b099deb3484ab3c
+
+param=file(Very Important
+</span></p>
+<p><br></p>
+"tyle="margin-right: 0px; margin-left: 0px; padding: 0px; font-family: 'Crimson")&param2=&=abcdef
+=======================================================================================

@@ -1,0 +1,9 @@
+GET /jk?c=62&p=9uXjIV2ANgzMeywU+Nf6gHojIxua6iOuE07Vq_611uY=&k=1 HTTP/1.1
+Accept: */*
+User-Agent: MeDCore
+Connection: keep-alive
+abcdefg
+Pragma: no-cache
+Cookie: data=xG1eDqzqj3lKJEgGlq4SkSAjKYE=,nG5j92UbBb98cQE4vE44psgaiJw2P0OwW5J+lPhEbthMrAXEo_8SNule8aczozLo,Cf0HSdB+uZJDkiXQxHSwGxVdCmSJwkGr4TAtvmoklmY=,5hpE1YgHfwHsmC1IyY2wd8NELVil32qxP83RXwwr_ds=,
+Host: piolink.com/gms.ahnlab.com
+
