@@ -1,4 +1,4 @@
-## 1. path, host 라운드 로빈
+## 1. path, host Round Robin
 >	* 파싱한 HTTP 헤더의 파싱 결과와 config파일에 정의된 룰을 비교해 서버 라운드로빈
 ***
 ## 2. Usage Method
@@ -15,8 +15,8 @@ q
 C 프로그램을 종료합니다.
 ~~~
 ***
-## 3. 소스코드
-> * 주요 구조체
+## 3. Soruce
+> * Main Structure
 >	* struct rule_node, struct addr_node
 ~~~ C
 C typedef struct rule_node
@@ -41,7 +41,7 @@ typedef struct addr_node
  		struct rule_node* prev;
 }_addr_node;
 ~~~
-> * 주요 파일
+> * Main File
 >	* rule_parsing
 >		* 파일을 라인으로 읽어 SP 구분자로 쪼갠 후 각 rule_node의 항목 별로 파싱
 >	* compare
