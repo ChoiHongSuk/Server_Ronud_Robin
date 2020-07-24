@@ -6,11 +6,11 @@
 >	* ``` #http_main config.txt ```
 >	* 프로그램 내에서 HTTP헤더 파일 경로 입력 (라운드 로빈 후 다시 입력), 프로그램 종료 시 'q' 입력
 ~~~ C
-C http헤더 경로를 입력하세여. (or Exit: q) > test.txt
+C http헤더 경로를 입력하세요. (or Exit: q) > test.txt
 192.168.216.173:443
-http헤더 경로를 입력하세여. (or Exit: q) > test.txt
+http헤더 경로를 입력하세요. (or Exit: q) > test.txt
 192.168.216.172:443
-http헤더 경로를 입력하세여. (or Exit: q) > 
+http헤더 경로를 입력하세요. (or Exit: q) > 
 q
 C 프로그램을 종료합니다.
 ~~~
