@@ -179,6 +179,9 @@ int config_parsing(_rule_node_t* rule_head, _addr_node_t* addr_head, char* buffe
 	return 0;
 }
 
+static int ip_count;
+static int port_count;
+
 int addr_parsing(_addr_node_t* addr_head, char* ip_addr, int ip_addr_size)
 {
 	char* com = NULL;
@@ -188,7 +191,7 @@ int addr_parsing(_addr_node_t* addr_head, char* ip_addr, int ip_addr_size)
 	int ip_size = 0, port_size = 0, ip_port_size = 0, rv = 0;
 	char* ip = NULL;
 	char* port = NULL;
-	int ip_t[IP_PREFIX];
+	long ip_t[IP_PREFIX];
 	int port_t = 0;
 
 	if ((addr_head == NULL) || (ip_addr == NULL) || (ip_addr_size < 0)) {
@@ -197,6 +200,8 @@ int addr_parsing(_addr_node_t* addr_head, char* ip_addr, int ip_addr_size)
 	}
 
 	memset(ip_t, 0, IP_PREFIX);
+	ip_count = 0;
+	port_count = 0;
 
 	while (1) {
 		com = memchr(ip_addr, COM, ip_addr_size);
@@ -240,7 +245,7 @@ int addr_parsing(_addr_node_t* addr_head, char* ip_addr, int ip_addr_size)
 	return 0;
 }
 
-int ip_port_convert(char* ip, char* port, int ip_size, int port_size, int* ip_t, int* port_t)
+int ip_port_convert(char* ip, char* port, int ip_size, int port_size, long* ip_t, int* port_t)
 {
 	int idx = 0, prefix_size = 0;
 	char* dot = NULL;
@@ -272,10 +277,13 @@ int ip_port_convert(char* ip, char* port, int ip_size, int port_size, int* ip_t,
 			printf("형식을 벗어난 ip입니다.\n");
 			return -1;
 		}
-
-		if (dot == NULL) {
-			break;
+		if (ip_t[idx] < 0 || ip_t[idx] > IP_MAX) {
+			printf("%d번쨰 ip중 해당 ip prefix가 범위를 벗어났습니다. [ip[%d]: %ld]\n", ip_count + SINGLE, idx + SINGLE, ip_t[idx]);
+			return -1;
 		}
+
+		if (dot == NULL) break;
+		if (idx == 3) break;
 
 		ip_size = ip_size - (prefix_size + SINGLE);
 		ip = dot + SINGLE;
@@ -293,6 +301,12 @@ int ip_port_convert(char* ip, char* port, int ip_size, int port_size, int* ip_t,
 		printf("형식을 벗어난 port입니다.\n");
 		return -1;
 	}	
+	if (*port_t < 0 || *port_t > PORT_MAX) {
+		printf("%d번쨰 port가  port 범위를 벗어났습니다.\n", port_count + SINGLE);
+		return -1;
+	}
+	ip_count++;
+	port_count++;
 
 	return 0;
 }

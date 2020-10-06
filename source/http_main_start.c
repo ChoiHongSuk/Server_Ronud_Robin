@@ -60,20 +60,15 @@ int start_http_header_parsing(char** argv)
 		}
 
 		rv = file_read(path, http, head, qp_head);
-		if (rv < 0) {
-			goto FREE_HTTP;
-		}
+		if (rv < 0) goto FREE_HTTP;
 
 		rv = http_print_buffer(http, head, qp_head);
-		if (rv < 0) {
-			goto FREE_HTTP;
-		}
+		if (rv < 0) goto FREE_HTTP;
 
 		/* request, rule compare */
 		rv = parsing_compare(rule_head, head, http);
-		if (rv < 0) {
-			goto FREE_HTTP;
-		}
+		if (rv < 0) goto FREE_HTTP;
+
 FREE_HTTP:
 		http_buffer_free(http);
 		delete_list(head);

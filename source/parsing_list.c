@@ -142,7 +142,7 @@ int rule_add_list(_rule_node_t* rule_head, _addr_node_t* addr_head, int type, in
 }
 
 /* addr list add */
-int addr_add_list(_addr_node_t* addr_head, int* ip_t, int port_t)
+int addr_add_list(_addr_node_t* addr_head, long* ip_t, int port_t)
 {
 	if ((addr_head == NULL) || (ip_t == NULL) || (port_t < 0)) {
 		printf("list param error(addr_node)\n");

@@ -20,6 +20,8 @@
 #define SP						' '
 #define DOT						'.'
 #define COM						','
+#define PORT_MAX				65535
+#define IP_MAX					255
 #define EXIT					"q"
 #define LF						'\n'
 #define CRLF					"\r\n"
@@ -128,7 +130,7 @@ void http_buffer_free(_http_header* http);
 /* rule parsing */
 int config_file_read(_rule_node_t* rule_head, char* rule_path);
 int config_parsing(_rule_node_t* rule_head, _addr_node_t* addr_head, char* buffer, int line_size);
-int ip_port_convert(char* ip, char* port, int ip_size, int port_size, int* ip_t, int* port_t);
+int ip_port_convert(char* ip, char* port, int ip_size, int port_size, long* ip_t, int* port_t);
 int addr_parsing(_addr_node_t* addr_head, char* ip_addr, int ip_addr_size);
 int number_max_get(int number, int size);
 

@@ -78,7 +78,7 @@ typedef struct rule_node
 int add_list(_node_t* head, char* name, char* value, int name_size, int value_size);
 int query_payload_add_list(_qp_t* qp_head, char* name, char* value, int name_size, int value_size, int option);
 int rule_add_list(_rule_node_t* rule_head, _addr_node_t* addr_head, int type, int match, char* string, int string_size);
-int addr_add_list(_addr_node_t* addr_head, int* ip_t, int port_t);
+int addr_add_list(_addr_node_t* addr_head, long* ip_t, int port_t);
 void print_list_query_payload(_qp_t* qp_head, int option);
 void print_list_header(_node_t* head);
 void delete_list(_node_t* head);
